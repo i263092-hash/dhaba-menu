@@ -19,6 +19,10 @@
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+
 
   <script>
     tailwind.config = {
@@ -118,11 +122,11 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-6 font-semibold">
-        <a href="index.html" class="hover:text-dhaba-gold transition-colors py-1 border-b-2 border-transparent hover:border-dhaba-gold">Home</a>
-        <a href="menu.html" class="hover:text-dhaba-gold transition-colors py-1 border-b-2 border-transparent hover:border-dhaba-gold">Menu</a>
-        <a href="contact.html" class="text-dhaba-gold border-b-2 border-dhaba-gold py-1">Contact Us</a>
-      </nav>
+      <nav>
+  <a href="index.html" class="active">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
       <!-- Call Us CTA Badge -->
       <a href="tel:+923001234567" class="relative bg-dhaba-amber hover:bg-dhaba-gold text-dhaba-dark font-bold px-4 py-2 rounded-full shadow-lg transition-all flex items-center gap-2 text-xs sm:text-sm">

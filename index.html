@@ -1,51 +1,51 @@
-<!-- Muhammad Ali -->
-<!-- 26i-3092 -->
-<!-- SE-B -->
-
-
 <!DOCTYPE html>
-<html>
-  <head>
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <title>Dhaba Menu</title>
     <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-  
-  </head>
-  <body>
-      <h1 class="title">Dhaba Menu</h1>
-      <script src="script.js"></script>
-  </body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1 class="title">Dhaba Menu</h1>
+
+    <img src="image/dhaba.jpg" class="w3-image w3-circle" alt="Dhaba Image" style="width:250px;height:250px;object-fit:cover">
+
+    <table>
+        <tr>
+            <th>Items</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Chai</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>Biscuit</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Coffee</td>
+            <td>70</td>
+        </tr>
+    </table>
+
+    <button type="button" onclick="sayHello()">Order!</button>
+
+    <script src="script.js"></script>
+    <script>
+        function sayHello() {
+            console.log("The order button was clicked!");
+            window.alert("Welcome to my page!");
+        }
+    </script>
+
+</body>
 </html>
-
-
-
-<img src="image/dhaba.jpg" class="w3-image w3-circle" alt="Norway" style="width:250px;height:250px;object-fit:cover">
-
-<table>
-  <tr>
-    <th>Items</th>
-    <th>Price</th>
-  </tr>
-  <tr>
-    <td>Chai  </td>
-    <td> 40 </td>
-
-  </tr>
-  <tr>
-    <td>Biscuit</td>
-    <td>50</td>
-  
-  </tr>
-  <tr>
-    <td>Coffee</td>
-    <td>70</td>
-
-  </tr>
-</table>
-<button type="button">Order!</button>
-<script>
-    function sayHello() {
-    console.log("The order button was clicked!");
-    window.alert("Welcome to my page");}
-</script>

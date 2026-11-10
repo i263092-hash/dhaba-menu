@@ -1,0 +1,400 @@
+<!-- 
+  Student Name: Muhammad Ali
+  Roll Number: 26i-3092
+  Section: SE-B
+  Lab Project: Dhaba Menu - Photo & Video Gallery Page
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Dhaba Menu | Muhammad Ali (26i-3092)</title>
+  
+  <!-- Google Fonts & Tailwind CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dhaba: {
+              red: '#8B0000',
+              deepred: '#660000',
+              amber: '#D97706',
+              warm: '#F59E0B',
+              gold: '#FBBF24',
+              cream: '#FFFBEB',
+              terracotta: '#7C2D12',
+              dark: '#1C1917',
+              surface: '#FFF7ED'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFF7ED;
+      color: #1C1917;
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFF7ED;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D97706;
+      border-radius: 4px;
+    }
+
+    .gallery-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- ==================== TOP STUDENT BANNER ==================== -->
+  <div class="bg-dhaba-dark text-dhaba-gold text-xs sm:text-sm py-2 px-4 text-center border-b border-dhaba-amber/30 flex justify-between items-center max-w-full">
+    <div class="container mx-auto flex justify-between items-center">
+      <span class="font-semibold tracking-wide">
+        <i class="fa-solid fa-graduation-cap mr-2"></i>Lab 11 Project Submission
+      </span>
+      <div class="space-x-3 font-mono text-xs">
+        <span class="bg-dhaba-terracotta/60 px-2 py-1 rounded">Name: <strong>Muhammad Ali</strong></span>
+        <span class="bg-dhaba-terracotta/60 px-2 py-1 rounded">Roll #: <strong>26i-3092</strong></span>
+        <span class="hidden sm:inline-block bg-dhaba-terracotta/60 px-2 py-1 rounded">Section: <strong>SE-B</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="sticky top-0 z-40 bg-dhaba-red text-white shadow-xl border-b-4 border-dhaba-gold">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Logo & Title -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-dhaba-gold text-dhaba-red flex items-center justify-center font-bold text-2xl shadow-md group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-mug-hot"></i>
+        </div>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-serif font-extrabold tracking-wide text-dhaba-gold drop-shadow-md">
+            Chai & Karahi Dhaba
+          </h1>
+          <p class="text-xs text-dhaba-cream font-light tracking-widest uppercase">Desi Zaika & Atmosphere</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-6 font-semibold">
+        <a href="index.html" class="hover:text-dhaba-gold transition-colors py-1 border-b-2 border-transparent hover:border-dhaba-gold">Home</a>
+        <a href="menu.html" class="hover:text-dhaba-gold transition-colors py-1 border-b-2 border-transparent hover:border-dhaba-gold">Menu</a>
+        <a href="gallery.html" class="text-dhaba-gold border-b-2 border-dhaba-gold py-1">Gallery</a>
+        <a href="contact.html" class="hover:text-dhaba-gold transition-colors py-1 border-b-2 border-transparent hover:border-dhaba-gold">Contact Us</a>
+      </nav>
+
+      <!-- Call Action Button -->
+      <a href="contact.html" class="relative bg-dhaba-amber hover:bg-dhaba-gold text-dhaba-dark font-bold px-4 py-2 rounded-full shadow-lg transition-all flex items-center gap-2 text-xs sm:text-sm">
+        <i class="fa-solid fa-camera"></i>
+        <span>Explore Vibe</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO BANNER ==================== -->
+  <section class="bg-gradient-to-r from-dhaba-terracotta via-dhaba-red to-dhaba-dark text-white py-12 px-4 shadow-inner">
+    <div class="container mx-auto text-center space-y-3">
+      <span class="bg-dhaba-gold text-dhaba-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Visual Delights</span>
+      <h2 class="text-3xl md:text-5xl font-serif font-bold text-dhaba-cream">Dhaba Photo & Food Gallery</h2>
+      <p class="text-sm md:text-base text-dhaba-cream/80 max-w-2xl mx-auto">
+        Immerse yourself in the authentic colors, sizzle of fresh karahis, charcoal BBQ smoke, and traditional charpai seating.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-2.5">
+        <button onclick="filterGallery('all')" id="gfilter-all" class="g-btn bg-dhaba-gold text-dhaba-dark font-semibold px-4 py-1.5 rounded-full text-xs sm:text-sm shadow transition">All Photos</button>
+        <button onclick="filterGallery('karahi')" id="gfilter-karahi" class="g-btn bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-1.5 rounded-full text-xs sm:text-sm border border-white/20 transition">🔥 Karahi & Handi</button>
+        <button onclick="filterGallery('bbq')" id="gfilter-bbq" class="g-btn bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-1.5 rounded-full text-xs sm:text-sm border border-white/20 transition">🍢 BBQ & Tandoor</button>
+        <button onclick="filterGallery('chai')" id="gfilter-chai" class="g-btn bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-1.5 rounded-full text-xs sm:text-sm border border-white/20 transition">☕ Chai & Beverages</button>
+        <button onclick="filterGallery('ambiance')" id="gfilter-ambiance" class="g-btn bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-1.5 rounded-full text-xs sm:text-sm border border-white/20 transition">🌙 Dhaba Ambiance</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN GALLERY GRID ==================== -->
+  <main class="container mx-auto px-4 py-12 flex-grow">
+    
+    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+      <!-- ITEM 1: Shinwari Karahi -->
+      <div class="gallery-item karahi gallery-card bg-white rounded-2xl overflow-hidden shadow-md border border-dhaba-amber/20 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1000&q=80', 'Shinwari Chicken Karahi', 'Cooked in tomatoes, green chilies, and black pepper with pure ghee.', 'Desi Karahi & Handi')">
+        <div class="relative h-56 overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80" alt="Shinwari Chicken Karahi" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-3 left-3 bg-dhaba-red text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">Karahi & Handi</span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-2xl font-bold">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base text-dhaba-dark">Shinwari Chicken Karahi</h3>
+          <p class="text-xs text-gray-500 mt-1 line-clamp-2">Authentic Khyber style wok chicken prepared with minimal spices and pure ghee.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 2: Malai Boti & Seekh Kabab -->
+      <div class="gallery-item bbq gallery-card bg-white rounded-2xl overflow-hidden shadow-md border border-dhaba-amber/20 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1000&q=80', 'Charcoal BBQ Platter', 'Smoky chicken malai boti and spicy beef seekh kababs fresh off coals.', 'BBQ & Tandoor')">
+        <div class="relative h-56 overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80" alt="BBQ Platter" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-3 left-3 bg-dhaba-terracotta text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">BBQ & Tandoor</span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-2xl font-bold">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base text-dhaba-dark">Charcoal BBQ Platter</h3>
+          <p class="text-xs text-gray-500 mt-1 line-clamp-2">Smoky chicken malai boti and spicy beef seekh kababs fresh off live coals.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 3: Matka Doodh Patti Chai -->
+      <div class="gallery-item chai gallery-card bg-white rounded-2xl overflow-hidden shadow-md border border-dhaba-amber/20 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1000&q=80', 'Matka Doodh Patti Chai', 'Slow-boiled Karak tea served in rustic earthen clay cups.', 'Chai & Beverages')">
+        <div class="relative h-56 overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Matka Chai" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-3 left-3 bg-dhaba-amber text-dhaba-dark text-xs font-bold px-2.5 py-1 rounded-full shadow">Chai & Beverages</span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-2xl font-bold">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base text-dhaba-dark">Matka Doodh Patti Chai</h3>
+          <p class="text-xs text-gray-500 mt-1 line-clamp-2">Slow-boiled Karak tea infused with cardamom, served in earthen clay cups.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 4: Fresh Tandoori Naan -->
+      <div class="gallery-item bbq gallery-card bg-white rounded-2xl overflow-hidden shadow-md border border-dhaba-amber/20 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=1000&q=80', 'Hot Roghani & Garlic Naan', 'Freshly baked in mud clay tandoor brushed with sesame and butter.', 'BBQ & Tandoor')">
+        <div class="relative h-56 overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80" alt="Tandoori Naan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-3 left-3 bg-dhaba-terracotta text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">BBQ & Tandoor</span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-2xl font-bold">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base text-dhaba-dark">Fresh Roghani Naan</h3>
+          <p class="text-xs text-gray-500 mt-1 line-clamp-2">Piping hot flatbreads slapped inside high-heat mud clay ovens.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 5: Outdoor Charpai Seating -->
+      <div class="gallery-item ambiance gallery-card bg-white rounded-2xl overflow-hidden shadow-md border border-dhaba-amber/20 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80', 'Charpai Outdoor Open Seating', 'Traditional woven beds and wooden tables under fairy lights.', 'Dhaba Ambiance')">
+        <div class="relative h-56 overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Charpai Seating" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-3 left-3 bg-dhaba-dark text-dhaba-gold text-xs font-bold px-2.5 py-1 rounded-full shadow">Dhaba Ambiance</span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-2xl font-bold">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base text-dhaba-dark">Outdoor Charpai Seating</h3>
+          <p class="text-xs text-gray-500 mt-1 line-clamp-2">Relax under the open sky on handwoven jute charpais with friends.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 6: Kashmiri Pink Chai -->
+      <div class="gallery-item chai gallery-card bg-white rounded-2xl overflow-hidden shadow-md border border-dhaba-amber/20 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80', 'Kashmiri Pink Tea', 'Creamy pink tea garnished with crushed pistachios and almonds.', 'Chai & Beverages')">
+        <div class="relative h-56 overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" alt="Kashmiri Pink Chai" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-3 left-3 bg-dhaba-amber text-dhaba-dark text-xs font-bold px-2.5 py-1 rounded-full shadow">Chai & Beverages</span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-2xl font-bold">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base text-dhaba-dark">Kashmiri Pink Tea</h3>
+          <p class="text-xs text-gray-500 mt-1 line-clamp-2">Traditional winter special pink brew topped with crushed dry fruits.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 7: Mutton Makhni Handi -->
+      <div class="gallery-item karahi gallery-card bg-white rounded-2xl overflow-hidden shadow-md border border-dhaba-amber/20 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1000&q=80', 'Claypot Mutton Handi', 'Tender mutton pieces slow-cooked in rich butter and yogurt sauce.', 'Karahi & Handi')">
+        <div class="relative h-56 overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Mutton Handi" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-3 left-3 bg-dhaba-red text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">Karahi & Handi</span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-2xl font-bold">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base text-dhaba-dark">Claypot Mutton Handi</h3>
+          <p class="text-xs text-gray-500 mt-1 line-clamp-2">Slow simmered mutton in traditional terracotta pots for extra flavor.</p>
+        </div>
+      </div>
+
+      <!-- ITEM 8: Nighttime Dhaba Lights -->
+      <div class="gallery-item ambiance gallery-card bg-white rounded-2xl overflow-hidden shadow-md border border-dhaba-amber/20 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80', 'Late Night Dhaba Vibe', 'Warm glowing trucks, truck art decor, and ghazals playing in background.', 'Dhaba Ambiance')">
+        <div class="relative h-56 overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Nighttime Atmosphere" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <span class="absolute top-3 left-3 bg-dhaba-dark text-dhaba-gold text-xs font-bold px-2.5 py-1 rounded-full shadow">Dhaba Ambiance</span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-2xl font-bold">
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-base text-dhaba-dark">Late Night Dhaba Atmosphere</h3>
+          <p class="text-xs text-gray-500 mt-1 line-clamp-2">Colorful truck art motifs, warm lighting, and late night social gatherings.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== LIGHTBOX POPUP MODAL ==================== -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl border-2 border-dhaba-gold transform transition-all">
+      <button onclick="closeLightbox()" class="absolute top-3 right-3 bg-dhaba-dark text-white hover:bg-dhaba-red w-9 h-9 rounded-full flex items-center justify-center z-10 font-bold transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="h-64 md:h-full bg-black flex items-center justify-center">
+          <img id="lightbox-img" src="" alt="Popup Preview" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <span id="lightbox-tag" class="bg-dhaba-amber text-dhaba-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Category</span>
+            <h3 id="lightbox-title" class="text-2xl font-serif font-bold text-dhaba-dark mt-2">Title</h3>
+            <p id="lightbox-desc" class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed">Description</p>
+          </div>
+          <div class="pt-4 border-t border-gray-200 flex items-center justify-between">
+            <div class="text-xs text-gray-500">
+              Captured at: <strong>Muhammad Ali Dhaba</strong>
+            </div>
+            <a href="menu.html" class="bg-dhaba-red hover:bg-dhaba-deepred text-white font-bold px-4 py-2 rounded-xl text-xs transition">
+              Order Dishe <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-dhaba-dark text-white border-t-4 border-dhaba-amber">
+    <div class="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Brand Info -->
+      <div class="space-y-3">
+        <h3 class="text-xl font-serif font-bold text-dhaba-gold flex items-center gap-2">
+          <i class="fa-solid fa-mug-hot"></i> Chai & Karahi Dhaba
+        </h3>
+        <p class="text-xs text-gray-400 leading-relaxed">
+          Serving authentic karak chai, freshly cooked karahis, and charcoal BBQ delights with traditional Pakistani hospitality.
+        </p>
+      </div>
+
+      <!-- Quick Contact Info -->
+      <div class="space-y-3">
+        <h4 class="text-sm font-semibold text-dhaba-gold uppercase tracking-wider">Contact & Location</h4>
+        <ul class="text-xs text-gray-300 space-y-2">
+          <li><i class="fa-solid fa-location-dot text-dhaba-amber mr-2"></i> G-11 Markaz, Islamabad, Pakistan</li>
+          <li><i class="fa-solid fa-phone text-dhaba-amber mr-2"></i> +92 300 1234567</li>
+          <li><i class="fa-solid fa-envelope text-dhaba-amber mr-2"></i> orders@dhabamenu.pk</li>
+        </ul>
+      </div>
+
+      <!-- Student Details & Copyright -->
+      <div class="space-y-3 border-t md:border-t-0 border-gray-800 pt-4 md:pt-0">
+        <h4 class="text-sm font-semibold text-dhaba-gold uppercase tracking-wider">Lab Assignment Info</h4>
+        <div class="bg-white/5 p-3 rounded-lg border border-white/10 text-xs space-y-1">
+          <p><span class="text-gray-400">Developer:</span> <strong class="text-white">Muhammad Ali</strong></p>
+          <p><span class="text-gray-400">Roll Number:</span> <strong class="text-dhaba-gold">26i-3092</strong></p>
+          <p><span class="text-gray-400">Course / Sec:</span> <strong class="text-white">Software Engineering (SE-B)</strong></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bg-black/60 py-3 text-center text-xs text-gray-400 border-t border-white/5">
+      &copy; 2026 Dhaba Menu | Designed for Web Engineering Lab 11 by Muhammad Ali (26i-3092)
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // Gallery Category Filtering Logic
+    function filterGallery(cat) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.g-btn');
+
+      // Reset button styles
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-dhaba-gold', 'text-dhaba-dark');
+        btn.classList.add('bg-white/10', 'text-white');
+      });
+
+      // Highlight active button
+      const activeBtn = document.getElementById('gfilter-' + cat);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white/10', 'text-white');
+        activeBtn.classList.add('bg-dhaba-gold', 'text-dhaba-dark');
+      }
+
+      // Show/hide grid cards
+      items.forEach(item => {
+        if (cat === 'all' || item.classList.contains(cat)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox Popup Controls
+    function openLightbox(imgSrc, title, desc, tag) {
+      document.getElementById('lightbox-img').src = imgSrc;
+      document.getElementById('lightbox-title').innerText = title;
+      document.getElementById('lightbox-desc').innerText = desc;
+      document.getElementById('lightbox-tag').innerText = tag;
+      
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+    }
+
+    // Close Lightbox when clicking outside the box
+    document.getElementById('lightbox-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>
