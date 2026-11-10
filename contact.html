@@ -1,0 +1,415 @@
+<!-- 
+  Student Name: Muhammad Ali
+  Roll Number: 26i-3092
+  Section: SE-B
+  Lab Project: Dhaba Menu - Contact & Location Page
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Dhaba Menu | Muhammad Ali (26i-3092)</title>
+  
+  <!-- Google Fonts & Tailwind CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dhaba: {
+              red: '#8B0000',
+              deepred: '#660000',
+              amber: '#D97706',
+              warm: '#F59E0B',
+              gold: '#FBBF24',
+              cream: '#FFFBEB',
+              terracotta: '#7C2D12',
+              dark: '#1C1917',
+              surface: '#FFF7ED'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFF7ED;
+      color: #1C1917;
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFF7ED;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D97706;
+      border-radius: 4px;
+    }
+
+    .pulse-ring {
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- ==================== TOP STUDENT BANNER ==================== -->
+  <div class="bg-dhaba-dark text-dhaba-gold text-xs sm:text-sm py-2 px-4 text-center border-b border-dhaba-amber/30 flex justify-between items-center max-w-full">
+    <div class="container mx-auto flex justify-between items-center">
+      <span class="font-semibold tracking-wide">
+        <i class="fa-solid fa-graduation-cap mr-2"></i>Lab 11 Project Submission
+      </span>
+      <div class="space-x-3 font-mono text-xs">
+        <span class="bg-dhaba-terracotta/60 px-2 py-1 rounded">Name: <strong>Muhammad Ali</strong></span>
+        <span class="bg-dhaba-terracotta/60 px-2 py-1 rounded">Roll #: <strong>26i-3092</strong></span>
+        <span class="hidden sm:inline-block bg-dhaba-terracotta/60 px-2 py-1 rounded">Section: <strong>SE-B</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="sticky top-0 z-40 bg-dhaba-red text-white shadow-xl border-b-4 border-dhaba-gold">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Logo & Title -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-dhaba-gold text-dhaba-red flex items-center justify-center font-bold text-2xl shadow-md group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-mug-hot"></i>
+        </div>
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-serif font-extrabold tracking-wide text-dhaba-gold drop-shadow-md">
+            Dhaba Menu
+          </h1>
+          <p class="text-xs text-dhaba-cream font-light tracking-widest uppercase">Desi Zaika & Chai</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-6 font-semibold">
+        <a href="index.html" class="hover:text-dhaba-gold transition-colors py-1 border-b-2 border-transparent hover:border-dhaba-gold">Home</a>
+        <a href="menu.html" class="hover:text-dhaba-gold transition-colors py-1 border-b-2 border-transparent hover:border-dhaba-gold">Menu</a>
+        <a href="contact.html" class="text-dhaba-gold border-b-2 border-dhaba-gold py-1">Contact Us</a>
+      </nav>
+
+      <!-- Call Us CTA Badge -->
+      <a href="tel:+923001234567" class="relative bg-dhaba-amber hover:bg-dhaba-gold text-dhaba-dark font-bold px-4 py-2 rounded-full shadow-lg transition-all flex items-center gap-2 text-xs sm:text-sm">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call Now</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO / BANNER ==================== -->
+  <section class="bg-gradient-to-r from-dhaba-terracotta via-dhaba-red to-dhaba-dark text-white py-12 px-4 shadow-inner">
+    <div class="container mx-auto text-center space-y-3">
+      <span class="bg-dhaba-gold text-dhaba-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Get in Touch</span>
+      <h2 class="text-3xl md:text-5xl font-serif font-bold text-dhaba-cream">Contact Us & Visit Our Dhaba</h2>
+      <p class="text-sm md:text-base text-dhaba-cream/80 max-w-2xl mx-auto">
+        Have questions about our menu, special catering, or table reservations? Send us a message or visit us for fresh Karak Chai and hot Karahi!
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== MAIN CONTACT SECTION ==================== -->
+  <main class="container mx-auto px-4 py-12 flex-grow">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT: CONTACT FORM (7 Cols) -->
+      <div class="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 shadow-xl border-2 border-dhaba-amber/20 space-y-6">
+        <div>
+          <h3 class="text-2xl font-serif font-bold text-dhaba-terracotta flex items-center gap-2">
+            <i class="fa-solid fa-paper-plane text-dhaba-amber"></i> Send Us an Inquiry / Order Note
+          </h3>
+          <p class="text-xs sm:text-sm text-gray-600 mt-1">Fill out the form below and our team will get back to you right away.</p>
+        </div>
+
+        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+          <!-- Full Name -->
+          <div>
+            <label for="fullName" class="block text-xs font-bold uppercase text-dhaba-dark mb-1">Full Name <span class="text-dhaba-red">*</span></label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                <i class="fa-solid fa-user"></i>
+              </span>
+              <input 
+                type="text" 
+                id="fullName" 
+                required 
+                placeholder="e.g. Muhammad Ali" 
+                class="w-full pl-10 pr-4 py-2.5 bg-dhaba-surface border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-dhaba-amber focus:ring-1 focus:ring-dhaba-amber transition"
+              />
+            </div>
+          </div>
+
+          <!-- Phone Number & Email Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="phone" class="block text-xs font-bold uppercase text-dhaba-dark mb-1">Phone / WhatsApp <span class="text-dhaba-red">*</span></label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  required 
+                  placeholder="+92 300 1234567" 
+                  class="w-full pl-10 pr-4 py-2.5 bg-dhaba-surface border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-dhaba-amber focus:ring-1 focus:ring-dhaba-amber transition"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-xs font-bold uppercase text-dhaba-dark mb-1">Email Address</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <input 
+                  type="email" 
+                  id="email" 
+                  placeholder="ali@example.com" 
+                  class="w-full pl-10 pr-4 py-2.5 bg-dhaba-surface border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-dhaba-amber focus:ring-1 focus:ring-dhaba-amber transition"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Preferred Contact Method -->
+          <div>
+            <label class="block text-xs font-bold uppercase text-dhaba-dark mb-1">Preferred Contact Method</label>
+            <div class="flex items-center space-x-6 pt-1 text-xs sm:text-sm font-medium text-gray-700">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="contactMethod" value="WhatsApp" checked class="text-dhaba-red focus:ring-dhaba-amber">
+                <span><i class="fa-brands fa-whatsapp text-green-600 mr-1"></i> WhatsApp</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="contactMethod" value="Phone Call" class="text-dhaba-red focus:ring-dhaba-amber">
+                <span><i class="fa-solid fa-phone-flip text-dhaba-amber mr-1"></i> Phone Call</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="radio" name="contactMethod" value="Email" class="text-dhaba-red focus:ring-dhaba-amber">
+                <span><i class="fa-solid fa-envelope text-blue-600 mr-1"></i> Email</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Note / Message -->
+          <div>
+            <label for="message" class="block text-xs font-bold uppercase text-dhaba-dark mb-1">Delivery Address or Special Request <span class="text-dhaba-red">*</span></label>
+            <textarea 
+              id="message" 
+              rows="4" 
+              required 
+              placeholder="Enter your delivery address, catering request, or special instructions..." 
+              class="w-full p-3 bg-dhaba-surface border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-dhaba-amber focus:ring-1 focus:ring-dhaba-amber transition"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            class="w-full bg-dhaba-red hover:bg-dhaba-deepred text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition duration-200 flex items-center justify-center gap-2 text-base active:scale-95"
+          >
+            <i class="fa-solid fa-paper-plane"></i> Submit Message / Order Note
+          </button>
+        </form>
+
+        <!-- Dynamic Success Alert (Hidden by default) -->
+        <div id="form-success-alert" class="hidden bg-green-100 border border-green-400 text-green-800 p-4 rounded-xl text-xs sm:text-sm space-y-1">
+          <p class="font-bold text-base flex items-center gap-2"><i class="fa-solid fa-circle-check text-green-600"></i> Message Sent Successfully!</p>
+          <p id="success-details-text"></p>
+        </div>
+      </div>
+
+      <!-- RIGHT: DHABA TIMINGS & GOOGLE MAP (5 Cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Dhaba Timing & Contact Info Card -->
+        <div class="bg-white rounded-2xl p-6 shadow-xl border-2 border-dhaba-amber/20 space-y-4">
+          <div class="flex items-center justify-between border-b pb-3">
+            <h3 class="text-xl font-serif font-bold text-dhaba-terracotta flex items-center gap-2">
+              <i class="fa-solid fa-clock text-dhaba-amber"></i> Opening Hours
+            </h3>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-green-100 text-green-800 pulse-ring">
+              <span class="w-2 h-2 mr-1 bg-green-500 rounded-full"></span> Open Now
+            </span>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm">
+            <div class="flex justify-between items-center py-1 border-b border-gray-100">
+              <span class="text-gray-600 font-semibold">Monday – Sunday</span>
+              <span class="font-bold text-dhaba-red">4:00 PM – 3:00 AM</span>
+            </div>
+            <div class="flex justify-between items-center py-1 border-b border-gray-100">
+              <span class="text-gray-600 font-semibold">Karak Chai Availability</span>
+              <span class="font-bold text-dhaba-amber">Non-Stop (24 Hours)</span>
+            </div>
+            <div class="flex justify-between items-center py-1">
+              <span class="text-gray-600 font-semibold">Late Night Dhaba Vibes</span>
+              <span class="font-bold text-green-700"><i class="fa-solid fa-moon"></i> Active</span>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t space-y-2 text-xs sm:text-sm">
+            <p class="flex items-start gap-2 text-gray-700">
+              <i class="fa-solid fa-location-dot text-dhaba-red mt-1"></i>
+              <span><strong>Address:</strong> Main G-11 Markaz, FAST NUCES Campus Dhaba Corner, Islamabad, Pakistan</span>
+            </p>
+            <p class="flex items-center gap-2 text-gray-700">
+              <i class="fa-solid fa-phone text-dhaba-amber"></i>
+              <span><strong>Phone:</strong> +92 300 1234567</span>
+            </p>
+            <p class="flex items-center gap-2 text-gray-700">
+              <i class="fa-brands fa-whatsapp text-green-600"></i>
+              <span><strong>WhatsApp:</strong> +92 300 1234567</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Google Maps Interactive Visual Placeholder Card -->
+        <div class="bg-white rounded-2xl shadow-xl border-2 border-dhaba-amber/20 overflow-hidden">
+          <div class="bg-dhaba-terracotta text-white px-4 py-2.5 flex items-center justify-between text-xs font-bold">
+            <span><i class="fa-solid fa-map-location-dot text-dhaba-gold mr-1"></i> Dhaba Location Map</span>
+            <span class="text-dhaba-gold">Islamabad, PK</span>
+          </div>
+          
+          <!-- Map Canvas Container -->
+          <div class="relative h-64 bg-gray-200">
+            <iframe 
+              title="Dhaba Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13278.435773177306!2d72.9961748!3d33.6844202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbe38e55e5b33%3A0xbef01ae0c9df6ef6!2sG-11%20Markaz%20G-11%2C%20Islamabad!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk" 
+              class="w-full h-full border-0" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            
+            <!-- Floating Pin Overlay Tag -->
+            <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow border border-dhaba-amber/30 text-xs flex items-center gap-2">
+              <div class="w-3 h-3 bg-dhaba-red rounded-full animate-ping"></div>
+              <span class="font-bold text-dhaba-dark">Dhaba Menu Corner - G-11</span>
+            </div>
+          </div>
+
+          <div class="p-3 bg-dhaba-surface text-center">
+            <a 
+              href="https://maps.google.com/?q=G-11+Markaz+Islamabad" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-flex items-center justify-center gap-2 text-xs font-bold text-dhaba-terracotta hover:text-dhaba-red transition"
+            >
+              <i class="fa-solid fa-directions text-dhaba-amber"></i> Get Directions on Google Maps
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="contact" class="bg-dhaba-dark text-white border-t-4 border-dhaba-amber">
+    <div class="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Brand Info -->
+      <div class="space-y-3">
+        <h3 class="text-xl font-serif font-bold text-dhaba-gold flex items-center gap-2">
+          <i class="fa-solid fa-mug-hot"></i> Dhaba Menu
+        </h3>
+        <p class="text-xs text-gray-400 leading-relaxed">
+          Serving authentic karak chai, freshly cooked karahis, and charcoal BBQ delights with traditional Pakistani hospitality.
+        </p>
+      </div>
+
+      <!-- Quick Contact Info -->
+      <div class="space-y-3">
+        <h4 class="text-sm font-semibold text-dhaba-gold uppercase tracking-wider">Contact & Location</h4>
+        <ul class="text-xs text-gray-300 space-y-2">
+          <li><i class="fa-solid fa-location-dot text-dhaba-amber mr-2"></i> G-11 Markaz, Islamabad, Pakistan</li>
+          <li><i class="fa-solid fa-phone text-dhaba-amber mr-2"></i> +92 300 1234567</li>
+          <li><i class="fa-solid fa-envelope text-dhaba-amber mr-2"></i> orders@dhabamenu.pk</li>
+        </ul>
+      </div>
+
+      <!-- Student Details & Copyright -->
+      <div class="space-y-3 border-t md:border-t-0 border-gray-800 pt-4 md:pt-0">
+        <h4 class="text-sm font-semibold text-dhaba-gold uppercase tracking-wider">Lab Assignment Info</h4>
+        <div class="bg-white/5 p-3 rounded-lg border border-white/10 text-xs space-y-1">
+          <p><span class="text-gray-400">Developer:</span> <strong class="text-white">Muhammad Ali</strong></p>
+          <p><span class="text-gray-400">Roll Number:</span> <strong class="text-dhaba-gold">26i-3092</strong></p>
+          <p><span class="text-gray-400">Course / Sec:</span> <strong class="text-white">Software Engineering (SE-B)</strong></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bg-black/60 py-3 text-center text-xs text-gray-400 border-t border-white/5">
+      &copy; 2026 Dhaba Menu | Designed for Web Engineering Lab 11 by Muhammad Ali (26i-3092)
+    </div>
+  </footer>
+
+  <!-- ==================== FORM HANDLING JAVASCRIPT ==================== -->
+  <script>
+    function handleContactSubmit(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('fullName').value;
+      const phone = document.getElementById('phone').value;
+      const method = document.querySelector('input[name="contactMethod"]:checked').value;
+      const message = document.getElementById('message').value;
+
+      const successAlert = document.getElementById('form-success-alert');
+      const detailsText = document.getElementById('success-details-text');
+
+      detailsText.innerHTML = `Thank you <strong>${name}</strong>! Your inquiry/order note has been logged under student ID <strong>Muhammad Ali (26i-3092)</strong>. We will reach out via <strong>${method}</strong> at <strong>${phone}</strong> shortly.`;
+
+      successAlert.classList.remove('hidden');
+
+      // Scroll to alert smoothly
+      successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Reset form
+      document.getElementById('contact-form').reset();
+    }
+  </script>
+
+</body>
+</html>
